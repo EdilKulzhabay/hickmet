@@ -20,7 +20,7 @@ const processExcelFile = async (filePath) => {
         for (const row of worksheet) {
             try {
                 const iin = row.iin?.toString();
-                const user = await User.findOne(iin)
+                const user = await User.findOne({ iin: iin });
                 if (user) {
                     continue;
                 }
