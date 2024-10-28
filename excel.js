@@ -11,7 +11,7 @@ mongoose
         console.log("Mongodb Error", err);
     });
 
-export const processExcelFile = async (filePath) => {
+const processExcelFile = async (filePath) => {
     try {
         const workbook = XLSX.readFile(filePath);
         const sheetName = workbook.SheetNames[0];
