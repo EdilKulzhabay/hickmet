@@ -15,8 +15,9 @@ mongoose
 const client = new Client({
     authStrategy: new LocalAuth(),
     puppeteer: {
-        headless: true, // Убедитесь, что Puppeteer работает в headless режиме
-        timeout: 60000, 
+        headless: true,
+        timeout: 60000,
+        args: ['--no-sandbox', '--disable-setuid-sandbox'], // Добавляем флаги
     },
 });
 
